@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="41065833-48bb-4b25-b576-aff70499343e" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="HTML File" />
+        <option value="SCSS File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="333EcfQsmndqVIO4VBFc4izjABF" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/courses/course_projects/home-finance_js/frontend/src/components&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2022.3.4\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\courses\course_projects\home-finance_js\frontend\src\components" />
+      <recent name="C:\courses\course_projects\home-finance_js\frontend\src\static\images" />
+      <recent name="C:\courses\course_projects\home-finance_js" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\courses\course_projects\home-finance_js\frontend\src\utils" />
+      <recent name="C:\courses\course_projects\home-finance_js\frontend" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/frontend/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.build" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="41065833-48bb-4b25-b576-aff70499343e" name="Changes" comment="" />
+      <created>1758537436007</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1758537436007</updated>
+      <workItem from="1758537437099" duration="9662000" />
+      <workItem from="1758576162107" duration="7345000" />
+      <workItem from="1758613378372" duration="25413000" />
+      <workItem from="1758703689434" duration="2533000" />
+      <workItem from="1758750505009" duration="830000" />
+      <workItem from="1758816827408" duration="1809000" />
+      <workItem from="1758926443322" duration="1806000" />
+      <workItem from="1759404180371" duration="8542000" />
+      <workItem from="1759566520371" duration="598000" />
+      <workItem from="1759704735125" duration="593000" />
+      <workItem from="1759706212972" duration="37952000" />
+      <workItem from="1760018842813" duration="2119000" />
+      <workItem from="1760194080928" duration="1165000" />
+      <workItem from="1760275476679" duration="1152000" />
+      <workItem from="1760277448941" duration="10960000" />
+      <workItem from="1760448639240" duration="351000" />
+      <workItem from="1760557350219" duration="1393000" />
+      <workItem from="1760558817231" duration="1522000" />
+      <workItem from="1760560445151" duration="406000" />
+      <workItem from="1760610964410" duration="2193000" />
+      <workItem from="1760614920153" duration="43000" />
+      <workItem from="1760615005727" duration="431000" />
+      <workItem from="1760646470001" duration="315000" />
+      <workItem from="1760652080740" duration="13627000" />
+      <workItem from="1760792111129" duration="35000" />
+      <workItem from="1760792838091" duration="924000" />
+      <workItem from="1760802666291" duration="12475000" />
+      <workItem from="1760827123439" duration="1630000" />
+      <workItem from="1760882967854" duration="5847000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

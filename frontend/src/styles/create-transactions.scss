@@ -1,0 +1,39 @@
+.container {
+  padding-left: 0;
+}
+
+.container .table {
+  background-color: #F5F5F5;
+}
+
+.container thead tr th {
+  color: #052C65;
+}
+
+.edit-btn {
+  background-color: #198754;
+  color: white;
+  height: 38px;
+  border: none;
+}
+
+.delete-btn {
+  background-color: #DC3545;
+  color: white;
+  height: 38px;
+  border: none;
+}
+
+button.active {
+  background-color: #0d6efd;
+  color: white;
+  border: none;
+}
+
+.btn-link {
+  cursor: pointer;
+}
+
+.btn-link:hover i {
+  opacity: 0.8;
+}

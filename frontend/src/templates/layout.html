@@ -1,0 +1,60 @@
+
+<div class="app-container">
+    <aside class="sidebar">
+        <div class="logo-container">
+            <div class="logo"><img src="/images/logo.png" alt="logo"></div>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="/" class="nav-item active">
+                <div class="nav-item-icon">
+                    <img src="/images/home.png" alt="home" class="normal-icon">
+                    <img src="/images/home-active.png" alt="home" class="active-icon">
+                </div>
+                <span>Главная</span>
+            </a>
+
+            <a href="/transactions" class="nav-item">
+                <div class="nav-item-icon">
+                    <img src="/images/money.png" alt="money" class="normal-icon">
+                    <img src="/images/money-active.png" alt="money" class="active-icon">
+                </div>
+                <span>Доходы & Расходы</span>
+            </a>
+
+            <div class="dropdown">
+                <input type="checkbox" id="categories-toggle" class="dropdown-checkbox">
+                <label for="categories-toggle" class="dropdown-header">
+                    <div class="dropdown-header-content">
+                        <span>Категории</span>
+                        <div class="arrow">
+                            <img src="/images/arrow.png" alt="arrow" class="arrow-icon">
+                        </div>
+                    </div>
+                </label>
+                <ul class="dropdown-list">
+                    <li><a href="/profit" class="nav-item sub-item">Доходы</a></li>
+                    <li><a href="/costs" class="nav-item sub-item">Расходы</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="balance-section">
+            <div class="balance-label">Баланс: </div>
+            <div class="balance-amount" id="balance-amount">500$</div>
+        </div>
+
+        <div class="user-container">
+            <div class="user-info">
+                <div class="user-icon">
+                    <i class="lni lni-user"></i>
+                </div>
+                <div class="user-name">Roman Chernov</div>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <div id="content-layout"></div>
+    </main>
+</div>

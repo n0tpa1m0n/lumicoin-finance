@@ -1,0 +1,69 @@
+<div class="container-fluid fw-bold mt-5" style="overflow-x: hidden; max-width: 100%;">
+    <h2 class="mb-4 " style="color:#052C65">Доходы</h2>
+
+    <div class="row g-3" id="income-container">
+
+        <div class="col-md-4">
+            <div class="card p-3" style="width: 352px; height: 121px; border-radius: 12px; border: 1px solid #CED4DA;">
+                <h5 class="card-title" >Депозиты</h5>
+                <div class="mt-2">
+                    <button class="btn btn-sm me-2 edit-btn" style="background-color: #0D6EFD; color: white; width: 134px; height: 38px; border: none;">Редактировать</button>
+                    <button class="btn btn-sm delete-btn" data-bs-toggle="modal" data-bs-target="#deleteModal" style="background-color: #DC3545; color: white; width: 88px; height: 38px; border: none;">Удалить</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card p-3" style="width: 352px; height: 121px; border-radius: 12px; border: 1px solid #CED4DA;">
+                <h5 class="card-title" style="color: #052C65; font-weight: 700; font-size: 1.25rem;">Зарплата</h5>
+                <div class="mt-2">
+                    <button class="btn btn-sm me-2 edit-btn" style="background-color: #0D6EFD; color: white; width: 134px; height: 38px; border: none;">Редактировать</button>
+                    <button class="btn btn-sm delete-btn" data-bs-toggle="modal" data-bs-target="#deleteModal" style="background-color: #DC3545; color: white; width: 88px; height: 38px; border: none;">Удалить</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card p-3" style="width: 352px; height: 121px; border-radius: 12px; border: 1px solid #CED4DA;">
+                <h5 class="card-title" style="color: #052C65; font-weight: 700; font-size: 1.25rem;">Сбережения</h5>
+                <div class="mt-2">
+                    <button class="btn  btn-sm me-2 edit-btn" style="background-color: #0D6EFD; color: white; width: 134px; height: 38px; border: none;">Редактировать</button>
+                    <button class="btn btn-sm delete-btn" data-bs-toggle="modal" data-bs-target="#deleteModal" style="background-color: #DC3545; color: white; width: 88px; height: 38px; border: none;">Удалить</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card p-3" style="width: 352px; height: 121px; border-radius: 12px; border: 1px solid #CED4DA;">
+                <h5 class="card-title" style="color: #052C65; font-weight: 700; font-size: 1.25rem;">Инвестиции</h5>
+                <div class="mt-2">
+                    <button class="btn btn-sm me-2 edit-btn" style="background-color: #0D6EFD; color: white; width: 134px; height: 38px; border: none;">Редактировать</button>
+                    <button class="btn btn-sm delete-btn" data-bs-toggle="modal" data-bs-target="#deleteModal" style="background-color: #DC3545; color: white; width: 88px; height: 38px; border: none;">Удалить</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Карточка с плюсиком -->
+        <div class="col-md-4">
+            <div class="card p-3 add-card" style="width: 352px; height: 121px; border: 1px solid #CED4DA; border-radius: 12px; display: flex; align-items: center; justify-content: center; cursor: pointer;">
+                <span style="font-size: 16px; color: #CED4DA; width: 16px; height: 33px; display: flex; align-items: center; justify-content: center;">+</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Модальное окно -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 shadow rounded-3">
+            <div class="modal-body text-center p-4">
+                <p class="mb-1 fw-semibold">Вы действительно хотите удалить категорию?</p>
+                <p class="mb-4 fw-semibold">Связанные доходы останутся без категории.</p>
+                <div class="d-flex justify-content-center gap-3">
+                    <button type="button" class="btn btn-success px-4" id="confirmDelete">Да, удалить</button>
+                    <button type="button" class="btn btn-danger px-4" data-bs-dismiss="modal">Нет, не удалять</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

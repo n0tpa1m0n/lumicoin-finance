@@ -1,0 +1,140 @@
+<h2 class="mb-4 mt-5 ">Расходы</h2>
+
+<div class="row g-3" id="expenses-container">
+    <div class="col-md-4 col-sm-6">
+        <div class="card p-3 h-100">
+            <h5 class="card-title">Еда</h5>
+            <div class="mt-auto">
+                <button class="btn btn-primary btn-sm me-2 p-2" data-action="edit" data-category="Еда">Редактировать</button>
+
+                <button class="btn btn-danger btn-sm  p-2" data-action="delete" data-category="Еда" data-bs-toggle="modal" data-bs-target="#deleteModal">Удалить</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4 col-sm-6">
+        <div class="card p-3 h-100">
+            <h5 class="card-title">Жильё</h5>
+            <div class="mt-auto">
+                <button class="btn btn-primary btn-sm me-2  p-2" data-action="edit" data-category="Еда">Редактировать</button>
+                <button class="btn btn-danger btn-sm  p-2" data-action="delete" data-category="Жильё" data-bs-toggle="modal" data-bs-target="#deleteModal">Удалить</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4 col-sm-6">
+        <div class="card p-3 h-100">
+            <h5 class="card-title">Здоровье</h5>
+            <div class="mt-auto">
+                <button class="btn btn-primary btn-sm me-2  p-2" data-action="edit" data-category="Здоровье">Редактировать</button>
+                <button class="btn btn-danger btn-sm  p-2" data-action="delete" data-category="Здоровье" data-bs-toggle="modal" data-bs-target="#deleteModal">Удалить</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4 col-sm-6">
+        <div class="card p-3 h-100">
+            <h5 class="card-title">Кафе</h5>
+            <div class="mt-auto">
+                <button class="btn btn-primary btn-sm me-2  p-2" data-action="edit" data-category="Кафе">Редактировать</button>
+                <button class="btn btn-danger btn-sm  p-2" data-action="delete" data-category="Кафе" data-bs-toggle="modal" data-bs-target="#deleteModal">Удалить</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4 col-sm-6">
+        <div class="card p-3 h-100">
+            <h5 class="card-title">Авто</h5>
+            <div class="mt-auto">
+                <button class="btn btn-primary btn-sm me-2  p-2" data-action="edit" data-category="Авто">Редактировать</button>
+                <button class="btn btn-danger btn-sm  p-2" data-action="delete" data-category="Авто" data-bs-toggle="modal" data-bs-target="#deleteModal">Удалить</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4 col-sm-6">
+        <div class="card p-3 h-100">
+            <h5 class="card-title">Одежда</h5>
+            <div class="mt-auto">
+                <button class="btn btn-primary btn-sm me-2  p-2" data-action="edit" data-category="Одежда">Редактировать</button>
+                <button class="btn btn-danger btn-sm  p-2" data-action="delete" data-category="Одежда" data-bs-toggle="modal" data-bs-target="#deleteModal">Удалить</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4 col-sm-6">
+        <div class="card p-3 h-100">
+            <h5 class="card-title">Развлечения</h5>
+            <div class="mt-auto">
+                <button class="btn btn-primary btn-sm me-2  p-2" data-action="edit" data-category="Развлечения">Редактировать</button>
+                <button class="btn btn-danger btn-sm  p-2"data-action="delete" data-category="Развлечения" data-bs-toggle="modal" data-bs-target="#deleteModal">Удалить</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4 col-sm-6">
+        <div class="card p-3 h-100">
+            <h5 class="card-title">Счета</h5>
+            <div class="mt-auto">
+                <button class="btn btn-primary btn-sm me-2  p-2" data-action="edit" data-category="Счета">Редактировать</button>
+                <button class="btn btn-danger btn-sm  p-2" data-action="delete" data-category="Счета" data-bs-toggle="modal" data-bs-target="#deleteModal">Удалить</button>
+            </div>
+        </div>
+    </div>  
+
+    <div class="col-md-4 col-sm-6">
+        <div class="card p-3 h-100">
+            <h5 class="card-title">Спорт</h5>
+            <div class="mt-auto">
+                <button class="btn btn-primary btn-sm me-2  p-2" data-action="edit" data-category="Спорт">Редактировать</button>
+                <button class="btn btn-danger btn-sm  p-2" data-action="delete" data-category="Еда" data-bs-toggle="modal" data-bs-target="#deleteModal">Удалить</button>
+                </div>
+        </div>
+    </div>
+
+    <!-- Карточка для добавления новой категории -->
+    <div class="col-md-4 col-sm-6">
+        <div class="card add-card p-3 h-100 d-flex align-items-center justify-content-center" id="addCategoryCard" style="cursor: pointer; border: 2px solid #dee2e6;">
+            <span class="fs-1 plus">+</span>
+
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 shadow rounded-3">
+            <div class="modal-body text-center p-4">
+                <h5 class="mb-3 fw-semibold">Вы действительно хотите удалить категорию?</h5>
+                <p class="text-muted mb-4" id="deleteModalText">Связанные расходы останутся без категории.</p>
+                <div class="d-flex justify-content-center gap-3">
+                    <button type="button" class="btn btn-danger px-4" id="confirmDelete">Да, удалить</button>
+                    <button type="button" class="btn btn-secondary px-4" data-bs-dismiss="modal">Нет, не удалять</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="categoryModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 shadow rounded-3">
+            <div class="modal-header border-0">
+                <h5 class="modal-title" id="categoryModalTitle">Добавить категорию</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="categoryForm">
+                    <div class="mb-3">
+                        <label for="categoryName" class="form-label">Название категории</label>
+                        <input type="text" class="form-control" id="categoryName" required>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer border-0">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
+                <button type="button" class="btn btn-primary" id="saveCategory">Сохранить</button>
+            </div>
+        </div>
+    </div>
+</div>

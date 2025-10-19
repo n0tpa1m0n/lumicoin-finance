@@ -1,0 +1,61 @@
+<h2 class="mb-40 mt-5">Доходы и расходы</h1>
+
+<div class="mb-5">
+    <button class="btn btn-sm me-2 edit-btn">Создать доход</button>
+    <button class="btn btn-sm delete-btn p-2" data-bs-toggle="modal" data-bs-target="#deleteModal">Создать расход</button>
+</div>
+
+<div class="buttons mb-4">
+    <button class="active">Сегодня</button>
+    <button>Неделя</button>
+    <button>Месяц</button>
+    <button>Год</button>
+    <button>Все</button>
+    <button>Интервал</button>
+    <div class="date-range">
+        <span>С <a href="#" class="date-link" id="startDateLink">Дата</a></span>
+        <span>по <a href="#" class="date-link text-black" id="endDateLink">Дата</a></span>
+    </div>
+</div>
+
+<div class="container mt-1">
+    <table class="table text-center align-middle">
+        <thead class="table-light">
+        <tr>
+            <th>№ операции</th>
+            <th>Тип</th>
+            <th>Категория</th>
+            <th>Сумма</th>
+            <th>Дата</th>
+            <th>Комментарий</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><strong>1</strong></td>
+            <td class="text-success">доход</td>
+            <td>зарплата</td>
+            <td>500$</td>
+            <td>11.09.2022</td>
+            <td></td>
+            <td>
+                <i class="bi bi-trash text-secondary me-2" title="Удалить"></i>
+                <i class="bi bi-pencil text-secondary" title="Редактировать"></i>
+            </td>
+        </tr>
+        <tr>
+            <td><strong>2</strong></td>
+            <td class="text-danger">расход</td>
+            <td>жильё</td>
+            <td>2 500$</td>
+            <td>12.09.2022</td>
+            <td></td>
+            <td>
+                <i class="bi bi-trash text-secondary me-2" title="Удалить"></i>
+                <i class="bi bi-pencil text-secondary" title="Редактировать"></i>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
