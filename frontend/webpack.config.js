@@ -52,11 +52,14 @@ module.exports = {
     }),
         new CopyPlugin({
             patterns: [
+                {from: './node_modules/vanilla-calendar-pro', to: 'vanilla-calendar-pro'},
                 { from: "./src/templates", to: "templates" },
                 { from: "./src/static/images", to: "images" },
                 { from: "./node_modules/bootstrap/dist/css/**/*", to: "css" },
-                // { from: "./node_modules/bootstrap/dist/js/**/*", to: "js" },
-                { from: "./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js", to: "js/bootstrap.js" },
+                {from: "./node_modules/jquery/dist/jquery.js", to: "js"},
+                {from: "./node_modules/bootstrap/dist/js/bootstrap.bundle.js", to: "js"},
+                {from: "./node_modules/icheck-bootstrap/icheck-bootstrap.css", to: "css"},
+                // { from: "./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js", to: "js/bootstrap.js" },
 
 
             ],

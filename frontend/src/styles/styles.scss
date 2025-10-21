@@ -1,10 +1,9 @@
 @use 'login';
 @use 'dashboard';
 @use 'layout';
-@use 'profit';
 @use 'transactions';
-@use 'edit-transactions';
-@use 'costs';
+
+
 
 * {
   margin: 0;
@@ -17,8 +16,26 @@ body {
   background-color: #f5f5f5;
 }
 h2 {
-  margin-bottom: 60px;
+  margin-bottom: 40px;
   color: #052C65;
   font-size: 40px;
   font-weight: 600;
 }
+.plus{
+  color: #CED4DA;
+}
+.card{
+  border-radius: 12px;
+  width: 382px; height: 121px;
+}
+.card-title{
+  color: #290661;
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.form-select{
+  width: 400px
+}
+
+

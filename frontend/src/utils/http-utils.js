@@ -7,7 +7,10 @@ export class HttpUtils {
             error: false,
             response: null
         }
-        let token = AuthUtils.getAuthInfo(AuthUtils.accessTokenKey)
+
+        const accessToken = AuthUtils.getAuthInfo(AuthUtils.accessTokenKey);
+        const refreshToken = AuthUtils.getAuthInfo(AuthUtils.refreshTokenKey);
+
         const params = {
             method: method,
             headers: {
@@ -17,9 +20,10 @@ export class HttpUtils {
         };
 
         if (useAuth) {
-            let token = AuthUtils.getAuthInfo(AuthUtils.refreshTokenKey);
-            if (token) {
-                params.headers['x-auth-token'] = token;
+            if (accessToken) {
+                params.headers['x-auth-token'] = accessToken;
+            } else {
+                console.log('No access token - request may fail');
             }
         }
 
@@ -30,7 +34,9 @@ export class HttpUtils {
         let response = null;
         try {
             response = await fetch(config.api + url, params);
+
             result.response = await response.json();
+
         } catch (e) {
             result.error = true;
             return result;
@@ -38,12 +44,12 @@ export class HttpUtils {
 
         if (response.status < 200 || response.status >= 300) {
             result.error = true;
+
             if (useAuth && response.status === 401) {
-                if (!token) {
-                    result.redirect = '/login'
+                if (!accessToken) {
+                    result.redirect = '/login';
                 } else {
                     const updateTokenResult = await AuthUtils.updateRefreshToken();
-
                     if (updateTokenResult) {
                         return this.request(url, method, useAuth, body);
                     } else {

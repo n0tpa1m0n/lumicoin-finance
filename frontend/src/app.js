@@ -30,7 +30,7 @@ class App{
         navItems.forEach(item => {
             item.addEventListener('click', (e) => {
                 if (!item.classList.contains('dropdown-header')) {
-                    // Убираем активный класс у всех
+
                     navItems.forEach(navItem => {
                         navItem.classList.remove('active');
                     });

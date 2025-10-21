@@ -78,14 +78,11 @@ export class Register {
 
 
             if (result.response && result.response.validation) {
-                console.log('❌ Ошибки валидации:', result.response.validation);
                 result.response.validation.forEach(error => {
-                    console.log('   - Поле:', error.field, 'Ошибка:', error.message);
                 });
             }
 
             if (result.error || !result.response || (result.response && (!result.response.user || !result.response.user.id))) {
-                console.log('❌ Ошибка регистрации:', result);
                 this.commonErrorElement.style.display = 'block';
                 return;
             }

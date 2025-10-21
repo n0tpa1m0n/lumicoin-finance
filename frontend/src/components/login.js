@@ -8,6 +8,7 @@ export class Login {
         if (AuthUtils.getAuthInfo(AuthUtils.accessTokenKey)) {
             return this.openNewRoute('/')
         }
+
         this.emailElement = document.getElementById('email');
         this.passwordElement = document.getElementById('password');
         this.rememberMeElement = document.getElementById('remember-me');
@@ -16,7 +17,6 @@ export class Login {
 
         if (!this.emailElement || !this.passwordElement || !this.rememberMeElement ||
             !this.commonErrorElement || !this.processButton) {
-            console.error('One or more login form elements not found');
             return;
         }
 
@@ -51,7 +51,7 @@ export class Login {
 
         if (this.validateForm()) {
             try {
-                const result = await HttpUtils.request('/login', 'POST', false, { // исправлено 'false' на false
+                const result = await HttpUtils.request('/login', 'POST', false, {
                     email: this.emailElement.value,
                     password: this.passwordElement.value,
                     rememberMe: this.rememberMeElement.checked
@@ -74,7 +74,6 @@ export class Login {
 
                 this.openNewRoute('/');
             } catch (error) {
-                console.error('Ошибка входа:', error);
                 if (this.commonErrorElement) {
                     this.commonErrorElement.style.display = 'block';
                 }

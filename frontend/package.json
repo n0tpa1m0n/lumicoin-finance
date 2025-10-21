@@ -22,7 +22,11 @@
     "webpack-dev-server": "^5.2.2"
   },
   "dependencies": {
+    "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.8",
-    "chart.js": "^4.5.0"
+    "chart.js": "^4.5.0",
+    "icheck-bootstrap": "^3.0.1",
+    "jquery": "^3.7.1",
+    "vanilla-calendar-pro": "^3.0.5"
   }
 }
