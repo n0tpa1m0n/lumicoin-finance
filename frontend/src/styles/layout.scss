@@ -225,7 +225,49 @@ body.costs-page #categories-toggle:checked + .dropdown-header .arrow {
   background-color: $primary-color;
   color: white;
 }
+.user-container {
+  position: relative;
+}
 
+.user-info {
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: #f8f9fa;
+  }
+}
+
+.user-dropdown-menu {
+  display: none;
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  background: white;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  min-width: 120px;
+  margin-bottom: 5px;
+  padding: 0;
+  list-style: none;
+  z-index: 1000;
+}
+
+.user-dropdown-item {
+  display: block;
+  padding: 8px 16px;
+  text-decoration: none;
+  color: #dc3545;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: #f8f9fa;
+    text-decoration: none;
+  }
+}
 .balance-section {
   padding: 20px;
 
