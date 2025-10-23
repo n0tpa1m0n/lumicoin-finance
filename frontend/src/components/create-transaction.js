@@ -138,6 +138,9 @@ export class CreateTransaction {
                     }
                 } else {
                     sessionStorage.removeItem('type');
+                    if (typeof Layout !== 'undefined' && Layout.setBalance) {
+                        await Layout.setBalance();
+                    }
                     this.openNewRoute('/transactions');
                 }
             } catch (error) {

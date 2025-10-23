@@ -5,64 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="41065833-48bb-4b25-b576-aff70499343e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/create-costs.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/create-profit.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/create-transaction.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/edit-costs.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/edit-profit.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/static/images/icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/templates/create-transaction.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/utils/calendar-utils.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/utils/localStorage-utils.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/dist/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/templates/costs.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/templates/costs.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/templates/create-costs.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/templates/create-costs.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/templates/create-profit.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/templates/create-profit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/templates/create-transactions.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/templates/create-transactions.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/dist/templates/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/templates/dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/templates/edit-costs.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/templates/edit-costs.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/templates/edit-profit.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/templates/edit-profit.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/dist/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/templates/layout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/templates/profit.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/templates/profit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/templates/transactions.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/templates/transactions.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/costs.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/costs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/create-transactions.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/card-element.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/create-transaction.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/create-transaction.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/dashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/edit-transactions.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/edit-transactions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/layout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/profit.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/profit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/register.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/transactions.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/transactions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/router.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/styles/costs.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/styles/create-transactions.scss" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/styles/dashboard.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles/dashboard.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/styles/edit-transactions.scss" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/styles/layout.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles/layout.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/styles/profit.scss" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/styles/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles/styles.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/styles/transactions.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles/transactions.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/templates/costs.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/templates/costs.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/templates/create-costs.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/templates/create-costs.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/templates/create-profit.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/templates/create-profit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/templates/create-transactions.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/templates/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/templates/dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/templates/edit-costs.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/templates/edit-costs.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/templates/edit-profit.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/templates/edit-profit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/templates/edit-transactions.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/templates/edit-transactions.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/templates/layout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/templates/profit.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/templates/profit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/templates/transactions.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/templates/transactions.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/utils/auth-utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/utils/auth-utils.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/utils/http-utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/utils/http-utils.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/webpack.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,6 +136,7 @@
       <workItem from="1760993688306" duration="7080000" />
       <workItem from="1761024142467" duration="18483000" />
       <workItem from="1761068327738" duration="6561000" />
+      <workItem from="1761172614664" duration="5372000" />
     </task>
     <servers />
   </component>

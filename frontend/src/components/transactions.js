@@ -135,7 +135,7 @@ export class Transactions {
         this.tableTbodyElement.innerHTML = '';
         await this.getOperations('all');
 
-        if (Layout.setBalance) {
+        if (typeof Layout !== 'undefined' && Layout.setBalance) {
             await Layout.setBalance();
         }
     }

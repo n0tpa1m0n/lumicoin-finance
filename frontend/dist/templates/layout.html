@@ -1,12 +1,12 @@
 
-<div class="app-container">
-    <aside class="sidebar">
-        <div class="logo-container">
+<div class="app-container d-flex">
+    <aside class="sidebar d-flex flex-column">
+        <div class="logo-container align-items-center d-flex justify-content-center">
             <div class="logo"><img src="/images/logo.png" alt="logo"></div>
         </div>
 
-        <nav class="sidebar-nav">
-            <a href="/" class="nav-item active">
+        <nav class="sidebar-nav  d-flex flex-column align-items-center">
+            <a href="/" class="nav-item active align-items-center d-flex">
                 <div class="nav-item-icon">
                     <img src="/images/home.png" alt="home" class="normal-icon">
                     <img src="/images/home-active.png" alt="home" class="active-icon">
@@ -14,7 +14,7 @@
                 <span>Главная</span>
             </a>
 
-            <a href="/transactions" class="nav-item">
+            <a href="/transactions" class="nav-item align-items-center d-flex">
                 <div class="nav-item-icon">
                     <img src="/images/money.png" alt="money" class="normal-icon">
                     <img src="/images/money-active.png" alt="money" class="active-icon">
@@ -22,10 +22,10 @@
                 <span>Доходы & Расходы</span>
             </a>
 
-            <div class="dropdown">
+            <div class="dropdown d-flex flex-column align-items-center">
                 <input type="checkbox" id="categories-toggle" class="dropdown-checkbox">
-                <label for="categories-toggle" class="dropdown-header">
-                    <div class="dropdown-header-content">
+                <label for="categories-toggle" class="dropdown-header justify-content-between d-flex align-items-center">
+                    <div class="dropdown-header-content d-flex align-items-center justify-content-between w-100">
                         <span>Категории</span>
                         <div class="arrow">
                             <img src="/images/arrow.png" alt="arrow" class="arrow-icon">
@@ -33,21 +33,21 @@
                     </div>
                 </label>
                 <ul class="dropdown-list">
-                    <li><a href="/profit" class="nav-item sub-item" data-category="profit">Доходы</a></li>
-                    <li><a href="/costs" class="nav-item sub-item" data-category="costs">Расходы</a></li>
+                    <li><a href="/profit" class="nav-item align-items-center d-flex sub-item" data-category="profit">Доходы</a></li>
+                    <li><a href="/costs" class="nav-item align-items-center d-flex sub-item" data-category="costs">Расходы</a></li>
                 </ul>
             </div>
         </nav>
 
-        <div class="balance-section">
+        <div class="balance-section d-flex align-items-center">
             <div class="balance-label">Баланс: </div>
             <div class="balance-amount" id="balance-amount">500$</div>
         </div>
 
-        <div class="user-container">
-            <div class="user-info">
-                <div class="user-icon">
-                    <i class="lni lni-user"></i>
+        <div class="user-container d-flex align-items-center">
+            <div class="user-info d-flex align-items-center">
+                <div class="user-icon d-flex align-items-center justify-content-center text-white">
+                    <img src="/images/icon.png" alt="icon" >
                 </div>
                 <div class="user-name">Roman Chernov</div>
             </div>

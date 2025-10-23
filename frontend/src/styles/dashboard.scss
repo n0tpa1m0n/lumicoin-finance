@@ -4,8 +4,7 @@ body {
 
 .buttons {
   margin-bottom: 140px;
-  display: flex;
-  align-items: center;
+
 }
 
 .buttons button {
@@ -32,17 +31,11 @@ button{
   }
 }
 .charts {
-  display: flex;
-  gap: 84px;
-  flex-wrap: wrap;
-  padding-left: 24px;
-  text-align: center;
+  gap: 84px; padding-left: 24px;
 }
 
 .chart-container {
   width: 445px;
-  text-align: center;
-
 }
 .cont{
 padding-right: 87px;
@@ -57,8 +50,7 @@ canvas {
   max-width: 100%;
 }
 .date-range {
-  display: flex;
-  align-items: center;
+
   gap: 5px;
   font-size: 14px;
 }

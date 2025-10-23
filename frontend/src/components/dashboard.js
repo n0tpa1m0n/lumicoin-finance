@@ -121,7 +121,6 @@ export class Dashboard {
                 const balanceElement = document.getElementById('balance-amount');
                 if (balanceElement) {
                     balanceElement.textContent = result.response.balance + '$';
-                    console.log('✅ Balance updated:', result.response.balance + '$');
                 } else {
                     console.log('Balance element not found');
                 }

@@ -281,7 +281,6 @@ export class Router {
     }
 
     updateActiveNavItem(activeRoute) {
-        console.log('🔄 Updating active nav for:', activeRoute);
 
 
         const navItems = document.querySelectorAll('.nav-item');
