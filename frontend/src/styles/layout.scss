@@ -26,9 +26,7 @@ $font-family: 'Roboto', sans-serif;
 
 .logo-container {
   height: $logo-height;
-  //display: flex;
-  //align-items: center;
-  //justify-content: center;
+
   border-bottom: 1px solid $border-color;
   padding: 0 20px;
 
@@ -47,23 +45,15 @@ $font-family: 'Roboto', sans-serif;
 .sidebar-nav {
   flex: 1;
   padding: 60px 0;
-  //display: flex;
-  //flex-direction: column;
-  //align-items: center;
   gap: 0;
 }
 
-.dropdown-checkbox {
-  display: none;
-}
 
 .nav-item {
   width: 178px;
   padding: 12px 10px;
   color: #333;
-  text-decoration: none;
   font-size: 14px;
-  font-weight: 500;
   transition: all 0.3s ease;
   border-radius: 4px;
   margin-bottom: 0;
@@ -73,13 +63,6 @@ $font-family: 'Roboto', sans-serif;
     position: relative;
     width: 15px;
     height: 15px;
-  }
-
-  .normal-icon {
-    display: block;
-  }
-  .active-icon {
-    display: none;
   }
 
   &:hover,
@@ -123,7 +106,6 @@ $font-family: 'Roboto', sans-serif;
   border-radius: 4px;
   cursor: pointer;
   font-size: 14px;
-  font-weight: 500;
   width: 100%;
   margin-bottom: 0;
   transition: all 0.3s ease;

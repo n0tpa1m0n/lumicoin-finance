@@ -9,14 +9,8 @@
       <change beforePath="$PROJECT_DIR$/frontend/dist/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/dist/templates/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/templates/dashboard.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/dist/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/templates/layout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/create-transaction.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/create-transaction.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/dashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/layout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/transactions.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/transactions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/router.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/styles/dashboard.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles/dashboard.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/styles/layout.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles/layout.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/styles/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles/styles.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/templates/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/templates/dashboard.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/templates/layout.html" afterDir="false" />
     </list>
@@ -136,7 +130,8 @@
       <workItem from="1760993688306" duration="7080000" />
       <workItem from="1761024142467" duration="18483000" />
       <workItem from="1761068327738" duration="6561000" />
-      <workItem from="1761172614664" duration="5372000" />
+      <workItem from="1761172614664" duration="5935000" />
+      <workItem from="1761218050804" duration="2076000" />
     </task>
     <servers />
   </component>
