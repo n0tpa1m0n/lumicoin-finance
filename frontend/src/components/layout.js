@@ -12,6 +12,7 @@ export class Layout {
         this.setupDropdownBehavior();
         this.updateUserInfo();
         this.setupUserDropdown();
+        this.setupHoverEffects();
     }
 
     updateUserInfo() {
@@ -53,6 +54,20 @@ export class Layout {
         } catch (error) {
             console.error('Balance update error:', error);
         }
+    }
+
+    setupHoverEffects() {
+        const navItems = document.querySelectorAll('.nav-item:not(.active)');
+
+        navItems.forEach(navItem => {
+            navItem.addEventListener('mouseenter', () => {
+                this.updateNavItemIcons(navItem, true);
+            });
+
+            navItem.addEventListener('mouseleave', () => {
+                this.updateNavItemIcons(navItem, false);
+            });
+        });
     }
 
     setupUserDropdown() {
@@ -119,29 +134,64 @@ export class Layout {
             this.updateNavItemIcons(item, false);
         });
 
-        let activeLink = document.querySelector(`a[href="${activeRoute}"]`);
+        let activeLink = this.findActiveLink(activeRoute);
 
         if (activeLink) {
             activeLink.classList.add('active');
             this.updateNavItemIcons(activeLink, true);
 
-            if (activeLink.classList.contains('sub-item')) {
-                const dropdownCheckbox = document.getElementById('categories-toggle');
-                if (dropdownCheckbox) {
-                    dropdownCheckbox.checked = true;
-                }
+            activeLink.removeEventListener('mouseenter', () => {});
+            activeLink.removeEventListener('mouseleave', () => {});
+        }
+
+        this.openCategoriesForRelatedPages(activeRoute);
+
+        this.setupHoverEffects();
+    }
+
+    findActiveLink(activeRoute) {
+        let activeLink = document.querySelector(`a[href="${activeRoute}"]`);
+
+        if (activeLink) return activeLink;
+
+        const routeGroups = {
+            '/profit': ['/create-profit', '/edit-profit'],
+            '/costs': ['/create-costs', '/edit-costs']
+        };
+
+        for (const [mainRoute, relatedRoutes] of Object.entries(routeGroups)) {
+            if (relatedRoutes.includes(activeRoute)) {
+                activeLink = document.querySelector(`a[href="${mainRoute}"]`);
+                if (activeLink) return activeLink;
             }
+        }
+
+        return null;
+    }
+
+    openCategoriesForRelatedPages(activeRoute) {
+        const dropdownCheckbox = document.getElementById('categories-toggle');
+        if (!dropdownCheckbox) return;
+
+        const categoryRelatedPages = [
+            '/profit', '/costs',
+            '/create-profit', '/create-costs',
+            '/edit-profit', '/edit-costs'
+        ];
+
+        if (categoryRelatedPages.includes(activeRoute)) {
+            dropdownCheckbox.checked = true;
         }
     }
 
-    updateNavItemIcons(navItem, isActive) {
+    updateNavItemIcons(navItem, showActive) {
         const navItemIcon = navItem.querySelector('.nav-item-icon');
         if (navItemIcon) {
             const normalIcon = navItemIcon.querySelector('.normal-icon');
             const activeIcon = navItemIcon.querySelector('.active-icon');
 
             if (normalIcon && activeIcon) {
-                if (isActive) {
+                if (showActive) {
                     normalIcon.classList.remove('d-block');
                     normalIcon.classList.add('d-none');
                     activeIcon.classList.remove('d-none');
@@ -161,7 +211,17 @@ export class Layout {
             const dropdown = document.querySelector('.dropdown');
             const checkbox = document.getElementById('categories-toggle');
 
-            if (dropdown && checkbox && !dropdown.contains(e.target)) {
+            if (!dropdown || !checkbox) return;
+
+            const keepOpenPages = [
+                '/profit', '/costs',
+                '/create-profit', '/create-costs',
+                '/edit-profit', '/edit-costs'
+            ];
+
+            const shouldKeepOpen = keepOpenPages.includes(window.location.pathname);
+
+            if (!dropdown.contains(e.target) && !shouldKeepOpen) {
                 checkbox.checked = false;
             }
         });

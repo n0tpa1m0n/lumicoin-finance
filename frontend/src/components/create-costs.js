@@ -10,8 +10,6 @@ export class CreateCosts {
         this.pageTitleElement.innerText = this.pageTitle;
         this.inputNameCategory = document.getElementById("input-name-category");
         this.buttonSave = document.getElementById("button-save");
-        // this.buttonCancel = document.getElementById("button-cancel");
-        // this.buttonCancel.innerHTML = '<a href="/exp" class="">Отмена</a>';
         this.buttonSave.addEventListener('click', this.createCategory.bind(this));
     }
 

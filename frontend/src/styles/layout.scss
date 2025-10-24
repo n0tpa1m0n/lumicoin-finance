@@ -268,6 +268,19 @@ body.costs-page #categories-toggle:checked + .dropdown-header .arrow {
     text-decoration: none;
   }
 }
+
+
+.dropdown:hover .dropdown-list {
+  display: block !important;
+}
+
+.dropdown-list {
+  display: none;
+}
+
+.dropdown-checkbox:checked ~ .dropdown-list {
+  display: block !important;
+}
 .balance-section {
   padding: 20px;
 

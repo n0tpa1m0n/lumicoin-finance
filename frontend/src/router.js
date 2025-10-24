@@ -28,11 +28,13 @@ export class Router {
                 title: 'Дашборд',
                 filePathTemplate: '/templates/dashboard.html',
                 useLayout: '/templates/layout.html',
+                requiresAuth:true,
                 load: () => {
                     new Dashboard(this.openNewRoute.bind(this));
                     new Layout();
                     this.calendar = new CalendarUtils().calendar;
                     new Dashboard(this.calendar);
+
 
                 },
                 unload: () => {
@@ -46,6 +48,7 @@ export class Router {
                 title: 'Расходы',
                 filePathTemplate: '/templates/costs.html',
                 useLayout: '/templates/layout.html',
+                requiresAuth:true,
                 load: () => {
                     new Layout();
                     new Costs(this.openNewRoute.bind(this));
@@ -56,6 +59,7 @@ export class Router {
                 title: 'Доходы',
                 filePathTemplate: '/templates/profit.html',
                 useLayout: '/templates/layout.html',
+                requiresAuth:true,
                 load: () => {
                     new Layout();
                     new Profit(this.openNewRoute.bind(this));
@@ -66,6 +70,7 @@ export class Router {
                 title: 'Доходы и расходы',
                 filePathTemplate: '/templates/transactions.html',
                 useLayout: '/templates/layout.html',
+                requiresAuth:true,
                 load: () => {
                     new Transactions(this.openNewRoute.bind(this));
                     new Layout();
@@ -83,6 +88,7 @@ export class Router {
                 title: 'Создать доход',
                 filePathTemplate: '/templates/create-transaction.html',
                 useLayout: '/templates/layout.html',
+                requiresAuth:true,
                 load: () => {
                     new Layout();
                     new CreateTransaction(this.openNewRoute.bind(this));
@@ -93,6 +99,7 @@ export class Router {
                 title: 'Создать доход',
                 filePathTemplate: '/templates/create-profit.html',
                 useLayout: '/templates/layout.html',
+                requiresAuth:true,
                 load: () => {
                     new Layout();
                     new CreateProfit(this.openNewRoute.bind(this));
@@ -103,6 +110,7 @@ export class Router {
                 title: 'Создать расход',
                 filePathTemplate: '/templates/create-costs.html',
                 useLayout: '/templates/layout.html',
+                requiresAuth:true,
                 load: () => {
                     new Layout();
                     new CreateCosts(this.openNewRoute.bind(this));
@@ -113,6 +121,7 @@ export class Router {
                 title: 'Редактировать доход',
                 filePathTemplate: '/templates/edit-profit.html',
                 useLayout: '/templates/layout.html',
+                requiresAuth:true,
                 load: () => {
                     new Layout();
                     new EditProfit(this.openNewRoute.bind(this));
@@ -123,6 +132,7 @@ export class Router {
                 title: 'Редактировать расход',
                 filePathTemplate: '/templates/edit-costs.html',
                 useLayout: '/templates/layout.html',
+                requiresAuth:true,
                 load: () => {
                     new Layout();
                     new EditCosts(this.openNewRoute.bind(this));
@@ -133,6 +143,7 @@ export class Router {
                 title: 'Редактировать транзакцию',
                 filePathTemplate: '/templates/edit-transactions.html',
                 useLayout: '/templates/layout.html',
+                requiresAuth:true,
                 load: () => {
                     new Layout();
                     new EditTransactions(this.openNewRoute.bind(this));
@@ -142,12 +153,14 @@ export class Router {
                 route: '/404',
                 title: 'Страница не найдена',
                 useLayout: false,
+                requiresAuth:false,
                 filePathTemplate: '/templates/404.html',
             },
             {
                 route: '/login',
                 title: 'Авторизация',
                 filePathTemplate: '/templates/login.html',
+                requiresAuth:false,
                 load: () => {
                     new Login(this.openNewRoute.bind(this));
                 },
@@ -160,6 +173,7 @@ export class Router {
                 route: '/register',
                 title: 'Регистрация',
                 filePathTemplate: '/templates/register.html',
+                requiresAuth:false,
                 load: () => {
                     new Register(this.openNewRoute.bind(this));
                 },
@@ -170,6 +184,7 @@ export class Router {
             },
             {
                 route: '/logout',
+                requiresAuth:false,
                 load: () => {
                     new Logout(this.openNewRoute.bind(this));
                 },
@@ -229,6 +244,11 @@ export class Router {
         const currentRoute = this.routes.find(item => item.route === urlRoute);
 
         if (currentRoute) {
+            if (currentRoute.requiresAuth && !this.isAuthenticated()) {
+                console.log('Требуется авторизация!');
+                this.openNewRoute('/login');
+                return;
+            }
             if (currentRoute.styles && currentRoute.styles.length > 0) {
                 currentRoute.styles.forEach(style => {
                     const link = document.createElement('link');
@@ -279,7 +299,10 @@ export class Router {
             console.error('Failed to load Layout:', error);
         }
     }
-
+    isAuthenticated(){
+        const accessToken = localStorage.getItem('accessToken');
+        return !!accessToken;
+    }
     updateActiveNavItem(activeRoute) {
 
 
