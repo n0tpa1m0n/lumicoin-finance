@@ -1,18 +1,5 @@
-import {Dashboard} from "./components/dashboard";
-import {Login} from "./components/login";
-import {Register} from "./components/register";
-import {Logout} from "./components/logout";
-import {Transactions} from "./components/transactions";
-import {Costs} from "./components/costs";
-import {Profit} from "./components/profit";
-import {EditProfit} from "./components/edit-profit";
-import {EditCosts} from "./components/edit-costs";
-import {CreateCosts} from "./components/create-costs";
-import {CreateTransaction} from "./components/create-transaction";
 import {Layout} from "./components/layout";
 import {CalendarUtils} from "./utils/calendar-utils";
-import {CreateProfit} from "./components/create-profit";
-import {EditTransactions} from "./components/edit-transactions";
 
 export class Router {
     constructor() {
@@ -29,13 +16,12 @@ export class Router {
                 filePathTemplate: '/templates/dashboard.html',
                 useLayout: '/templates/layout.html',
                 requiresAuth:true,
-                load: () => {
-                    new Dashboard(this.openNewRoute.bind(this));
+                load: async () => {
                     new Layout();
+                    const { Dashboard } = await import('./components/dashboard');
+                    new Dashboard(this.openNewRoute.bind(this));
                     this.calendar = new CalendarUtils().calendar;
                     new Dashboard(this.calendar);
-
-
                 },
                 unload: () => {
                     if (this.calendar) {
@@ -49,8 +35,9 @@ export class Router {
                 filePathTemplate: '/templates/costs.html',
                 useLayout: '/templates/layout.html',
                 requiresAuth:true,
-                load: () => {
+                load: async () => {
                     new Layout();
+                    const { Costs } = await import('./components/costs');
                     new Costs(this.openNewRoute.bind(this));
                 }
             },
@@ -60,8 +47,9 @@ export class Router {
                 filePathTemplate: '/templates/profit.html',
                 useLayout: '/templates/layout.html',
                 requiresAuth:true,
-                load: () => {
+                load: async () => {
                     new Layout();
+                    const { Profit } = await import('./components/profit');
                     new Profit(this.openNewRoute.bind(this));
                 }
             },
@@ -71,7 +59,8 @@ export class Router {
                 filePathTemplate: '/templates/transactions.html',
                 useLayout: '/templates/layout.html',
                 requiresAuth:true,
-                load: () => {
+                load: async () => {
+                    const { Transactions } = await import('./components/transactions');
                     new Transactions(this.openNewRoute.bind(this));
                     new Layout();
                     this.calendar = new CalendarUtils().calendar;
@@ -84,69 +73,75 @@ export class Router {
                 },
             },
             {
-                route: '/create-transaction',
-                title: 'Создать доход',
+                route: '/transactions/create-transaction',
+                title: 'Создать транзакцию',
                 filePathTemplate: '/templates/create-transaction.html',
                 useLayout: '/templates/layout.html',
                 requiresAuth:true,
-                load: () => {
+                load: async () => {
                     new Layout();
+                    const { CreateTransaction } = await import('./components/create-transaction');
                     new CreateTransaction(this.openNewRoute.bind(this));
                 }
             },
             {
-                route: '/create-profit',
-                title: 'Создать доход',
-                filePathTemplate: '/templates/create-profit.html',
-                useLayout: '/templates/layout.html',
-                requiresAuth:true,
-                load: () => {
-                    new Layout();
-                    new CreateProfit(this.openNewRoute.bind(this));
-                }
-            },
-            {
-                route: '/create-costs',
-                title: 'Создать расход',
-                filePathTemplate: '/templates/create-costs.html',
-                useLayout: '/templates/layout.html',
-                requiresAuth:true,
-                load: () => {
-                    new Layout();
-                    new CreateCosts(this.openNewRoute.bind(this));
-                }
-            },
-            {
-                route: '/edit-profit',
-                title: 'Редактировать доход',
-                filePathTemplate: '/templates/edit-profit.html',
-                useLayout: '/templates/layout.html',
-                requiresAuth:true,
-                load: () => {
-                    new Layout();
-                    new EditProfit(this.openNewRoute.bind(this));
-                }
-            },
-            {
-                route: '/edit-costs',
-                title: 'Редактировать расход',
-                filePathTemplate: '/templates/edit-costs.html',
-                useLayout: '/templates/layout.html',
-                requiresAuth:true,
-                load: () => {
-                    new Layout();
-                    new EditCosts(this.openNewRoute.bind(this));
-                }
-            },
-            {
-                route: '/edit-transactions',
+                route: '/transactions/edit-transactions',
                 title: 'Редактировать транзакцию',
                 filePathTemplate: '/templates/edit-transactions.html',
                 useLayout: '/templates/layout.html',
                 requiresAuth:true,
-                load: () => {
+                load: async () => {
                     new Layout();
+                    const { EditTransactions } = await import('./components/edit-transactions');
                     new EditTransactions(this.openNewRoute.bind(this));
+                }
+            },
+            {
+                route: '/profit/create-profit',
+                title: 'Создать доход',
+                filePathTemplate: '/templates/create-profit.html',
+                useLayout: '/templates/layout.html',
+                requiresAuth:true,
+                load: async () => {
+                    new Layout();
+                    const { CreateProfit } = await import('./components/create-profit');
+                    new CreateProfit(this.openNewRoute.bind(this));
+                }
+            },
+            {
+                route: '/profit/edit-profit',
+                title: 'Редактировать доход',
+                filePathTemplate: '/templates/edit-profit.html',
+                useLayout: '/templates/layout.html',
+                requiresAuth:true,
+                load: async () => {
+                    new Layout();
+                    const { EditProfit } = await import('./components/edit-profit');
+                    new EditProfit(this.openNewRoute.bind(this));
+                }
+            },
+            {
+                route: '/costs/create-costs',
+                title: 'Создать расход',
+                filePathTemplate: '/templates/create-costs.html',
+                useLayout: '/templates/layout.html',
+                requiresAuth:true,
+                load: async () => {
+                    new Layout();
+                    const { CreateCosts } = await import('./components/create-costs');
+                    new CreateCosts(this.openNewRoute.bind(this));
+                }
+            },
+            {
+                route: '/costs/edit-costs',
+                title: 'Редактировать расход',
+                filePathTemplate: '/templates/edit-costs.html',
+                useLayout: '/templates/layout.html',
+                requiresAuth:true,
+                load: async () => {
+                    new Layout();
+                    const { EditCosts } = await import('./components/edit-costs');
+                    new EditCosts(this.openNewRoute.bind(this));
                 }
             },
             {
@@ -161,7 +156,8 @@ export class Router {
                 title: 'Авторизация',
                 filePathTemplate: '/templates/login.html',
                 requiresAuth:false,
-                load: () => {
+                load: async () => {
+                    const { Login } = await import('./components/login');
                     new Login(this.openNewRoute.bind(this));
                 },
                 unload:()=>{
@@ -174,7 +170,8 @@ export class Router {
                 title: 'Регистрация',
                 filePathTemplate: '/templates/register.html',
                 requiresAuth:false,
-                load: () => {
+                load: async () => {
+                    const { Register } = await import('./components/register');
                     new Register(this.openNewRoute.bind(this));
                 },
                 unload:()=>{
@@ -185,11 +182,21 @@ export class Router {
             {
                 route: '/logout',
                 requiresAuth:false,
-                load: () => {
+                load: async () => {
+                    const { Logout } = await import('./components/logout');
                     new Logout(this.openNewRoute.bind(this));
                 },
             },
         ]
+
+        this.routeAliases = {
+            '/create-transaction': '/transactions/create-transaction',
+            '/edit-transactions': '/transactions/edit-transactions',
+            '/create-profit': '/profit/create-profit',
+            '/edit-profit': '/profit/edit-profit',
+            '/create-costs': '/costs/create-costs',
+            '/edit-costs': '/costs/edit-costs'
+        };
     }
 
     initEvents() {
@@ -204,7 +211,7 @@ export class Router {
         await this.activateRoute(null,currentRoute);
     }
 
-    async clickHandler(e) {
+    clickHandler(e) {
         let element = null;
         if (e.target.nodeName === 'A') {
             element = e.target;
@@ -220,8 +227,12 @@ export class Router {
 
             const currentRoute = window.location.pathname;
             history.pushState({}, '', url);
-            await this.activateRoute(null,currentRoute);
+            this.activateRoute(null,currentRoute);
         }
+    }
+
+    resolveRouteAlias(route) {
+        return this.routeAliases[route] || route;
     }
 
     async activateRoute(e,oldRoute = null) {
@@ -240,7 +251,14 @@ export class Router {
             }
         }
 
-        const urlRoute = window.location.pathname;
+        let urlRoute = window.location.pathname;
+
+        const resolvedRoute = this.resolveRouteAlias(urlRoute);
+        if (resolvedRoute !== urlRoute) {
+            history.replaceState({}, '', resolvedRoute);
+            urlRoute = resolvedRoute;
+        }
+
         const currentRoute = this.routes.find(item => item.route === urlRoute);
 
         if (currentRoute) {
@@ -277,14 +295,13 @@ export class Router {
             }
 
             if (currentRoute.load && typeof currentRoute.load === 'function') {
-                currentRoute.load();
+                await currentRoute.load();
             }
-
 
             this.updateActiveNavItem(urlRoute);
 
         } else {
-            console.log('No route found');
+            console.log('No route found for:', urlRoute);
             history.pushState({}, '', '/404');
             await this.activateRoute();
         }
@@ -292,23 +309,21 @@ export class Router {
 
     async initLayout() {
         try {
-
             const { Layout } = await import('./components/layout');
             this.layout = new Layout();
         } catch (error) {
             console.error('Failed to load Layout:', error);
         }
     }
+
     isAuthenticated(){
         const accessToken = localStorage.getItem('accessToken');
         return !!accessToken;
     }
+
     updateActiveNavItem(activeRoute) {
-
-
         const navItems = document.querySelectorAll('.nav-item');
         if (navItems.length === 0) {
-
             return;
         }
 
@@ -316,19 +331,20 @@ export class Router {
             item.classList.remove('active');
         });
 
+        let routeToActivate = activeRoute;
+        if (activeRoute.includes('/create-') || activeRoute.includes('/edit-')) {
+            const parts = activeRoute.split('/');
+            routeToActivate = '/' + parts[1];
+        }
 
-        let activeLink = document.querySelector(`a[href="${activeRoute}"]`);
+        let activeLink = document.querySelector(`a[href="${routeToActivate}"]`);
 
-        if (!activeLink) {
-
-            if (activeRoute === '/') {
-                activeLink = document.querySelector('a[href="/"]');
-            }
+        if (!activeLink && routeToActivate === '/') {
+            activeLink = document.querySelector('a[href="/"]');
         }
 
         if (activeLink) {
             activeLink.classList.add('active');
-
             if (activeLink.classList.contains('sub-item')) {
                 const dropdownCheckbox = document.getElementById('categories-toggle');
                 if (dropdownCheckbox) {
@@ -336,7 +352,7 @@ export class Router {
                 }
             }
         } else {
-            console.log('No matching link found for route:', activeRoute);
+            console.log('No matching link found for route:', routeToActivate);
         }
     }
 }

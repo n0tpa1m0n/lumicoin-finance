@@ -7,13 +7,10 @@
     <list default="true" id="41065833-48bb-4b25-b576-aff70499343e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/dist/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/templates/create-costs.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/templates/create-costs.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/create-costs.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/create-costs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/layout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/dist/src_components_layout_js.app.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/src_components_layout_js.app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/dashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/transactions.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/transactions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/router.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/styles/layout.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles/layout.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/templates/create-costs.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/templates/create-costs.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,7 +133,8 @@
       <workItem from="1761229998471" duration="1919000" />
       <workItem from="1761232027482" duration="5776000" />
       <workItem from="1761257698027" duration="511000" />
-      <workItem from="1761322630975" duration="4511000" />
+      <workItem from="1761322630975" duration="5109000" />
+      <workItem from="1761555962125" duration="12384000" />
     </task>
     <servers />
   </component>

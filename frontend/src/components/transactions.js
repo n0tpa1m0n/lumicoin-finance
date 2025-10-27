@@ -2,8 +2,6 @@ import {CardElement} from "../components/card-element"
 import {LocalStorageUtils} from "../utils/localStorage-utils";
 import {HttpUtils} from "../utils/http-utils";
 import {Layout} from "../components/layout";
-import {CalendarUtils} from "../utils/calendar-utils";
-import {config} from "../utils/config";
 
 export class Transactions {
     url = '/operations'
@@ -18,6 +16,7 @@ export class Transactions {
         this.buttonNoElement = document.getElementById('button-no');
         this.buttonCreateIncome = document.getElementById('create-income');
         this.buttonCreateExpense = document.getElementById('create-expense');
+        this.buttonIntervalElement = document.getElementById('button-interval');
 
         if (!this.tableTbodyElement) {
             return;
@@ -45,39 +44,102 @@ export class Transactions {
 
         if (this.buttonTodayElement) {
             this.buttonTodayElement.addEventListener('click', () => {
-                this.getOperations('').then();
+                this.setActiveButton(this.buttonTodayElement);
+                this.getOperations('today').then();
             });
         }
         if (this.buttonWeekElement) {
             this.buttonWeekElement.addEventListener('click', () => {
+                this.setActiveButton(this.buttonWeekElement);
                 this.getOperations('week').then();
             });
         }
         if (this.buttonMonthElement) {
             this.buttonMonthElement.addEventListener('click', () => {
+                this.setActiveButton(this.buttonMonthElement);
                 this.getOperations('month').then();
             });
         }
         if (this.buttonYearElement) {
             this.buttonYearElement.addEventListener('click', () => {
+                this.setActiveButton(this.buttonYearElement);
                 this.getOperations('year').then();
             });
         }
         if (this.buttonAllElement) {
             this.buttonAllElement.addEventListener('click', () => {
+                this.setActiveButton(this.buttonAllElement);
                 this.getOperations('all').then();
             });
         }
+        if (this.buttonIntervalElement) {
+            this.buttonIntervalElement.addEventListener('click', () => {
+                this.setActiveButton(this.buttonIntervalElement);
+                this.selectDateRange();
+            });
+        }
 
+        this.setActiveButton(this.buttonAllElement);
         this.getOperations('all').then();
+    }
 
-        setTimeout(() => {
-            this.calendar = new CalendarUtils().calendar;
-        }, 100);
+    setActiveButton(activeButton) {
+        const buttons = document.querySelectorAll('.btn-outline-secondary');
+        buttons.forEach(btn => {
+            btn.classList.remove('active');
+        });
+        if (activeButton) {
+            activeButton.classList.add('active');
+        }
+    }
+
+    selectDateRange() {
+        const startDate = prompt("Выберите дату начала (YYYY-MM-DD):");
+        if (!startDate) {
+            return;
+        }
+
+        const endDate = prompt("Выберите дату окончания (YYYY-MM-DD):");
+        if (!endDate) {
+            return;
+        }
+
+        if (!this.isValidDate(startDate) || !this.isValidDate(endDate)) {
+            alert('Неверный формат даты! Используйте YYYY-MM-DD');
+            return;
+        }
+
+        if (startDate > endDate) {
+            alert('Дата начала не может быть позже даты окончания!');
+            return;
+        }
+
+        const startDateLink = document.getElementById('link-interval-start');
+        const endDateLink = document.getElementById('link-interval-end');
+
+        if (startDateLink) startDateLink.textContent = startDate;
+        if (endDateLink) endDateLink.textContent = endDate;
+
+        this.getOperations('interval', startDate, endDate);
+        this.hideCalendar();
+    }
+
+    hideCalendar() {
+        const calendarElements = document.querySelectorAll('.vanilla-calendar');
+        calendarElements.forEach(element => {
+            element.style.display = 'none';
+        });
+    }
+
+    isValidDate(dateString) {
+        const regex = /^\d{4}-\d{2}-\d{2}$/;
+        if (!regex.test(dateString)) return false;
+
+        const date = new Date(dateString);
+        return date instanceof Date && !isNaN(date);
     }
 
     showIncomeExpense(operations = null) {
-
         if (!this.tableTbodyElement) {
             return;
         }
@@ -85,7 +147,6 @@ export class Transactions {
         this.tableTbodyElement.innerHTML = '';
 
         if (operations && operations.length > 0) {
-
             operations.forEach(operation => {
                 const row = CardElement.createTable(operation);
 
@@ -165,18 +226,23 @@ export class Transactions {
     }
 
     async getOperations(period = '', dateFrom = null, dateTo = null) {
-
         const queryParams = new URLSearchParams();
-        if (period) queryParams.append('period', period);
-        if (dateFrom) queryParams.append('dateFrom', dateFrom);
-        if (dateTo) queryParams.append('dateTo', dateTo);
+
+        if (period && period !== 'interval') {
+            queryParams.append('period', period);
+        }
+
+        if (dateFrom) {
+            queryParams.append('dateFrom', dateFrom);
+        }
+        if (dateTo) {
+            queryParams.append('dateTo', dateTo);
+        }
 
         const queryString = queryParams.toString();
         const url = queryString ? this.url + '?' + queryString : this.url;
 
-
         const result = await HttpUtils.request(url);
-
 
         if (result.error) {
             alert('Ошибка при загрузке операций: ' + result.message);
@@ -184,9 +250,5 @@ export class Transactions {
         }
 
         this.showIncomeExpense(result.response);
-    }
-
-    static async updateTable(period = '', dateFrom = null, dateTo = null) {
-        console.log('Static updateTable called');
     }
 }
