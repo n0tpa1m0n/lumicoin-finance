@@ -121,15 +121,10 @@ export class Transactions {
         if (endDateLink) endDateLink.textContent = endDate;
 
         this.getOperations('interval', startDate, endDate);
-        this.hideCalendar();
+
     }
 
-    hideCalendar() {
-        const calendarElements = document.querySelectorAll('.vanilla-calendar');
-        calendarElements.forEach(element => {
-            element.style.display = 'none';
-        });
-    }
+
 
     isValidDate(dateString) {
         const regex = /^\d{4}-\d{2}-\d{2}$/;

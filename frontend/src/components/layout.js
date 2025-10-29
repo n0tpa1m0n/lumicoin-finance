@@ -134,7 +134,7 @@ export class Layout {
             this.updateNavItemIcons(item, false);
         });
 
-        let activeLink = this.findActiveLink(activeRoute);
+        let activeLink = this.findActiveNavLink(activeRoute);
 
         if (activeLink) {
             activeLink.classList.add('active');
@@ -142,44 +142,74 @@ export class Layout {
 
             activeLink.removeEventListener('mouseenter', () => {});
             activeLink.removeEventListener('mouseleave', () => {});
-        }
 
-        this.openCategoriesForRelatedPages(activeRoute);
+            this.openCategoriesForRelatedPages(activeRoute, activeLink);
+        }
 
         this.setupHoverEffects();
     }
 
-    findActiveLink(activeRoute) {
+    findActiveNavLink(activeRoute) {
         let activeLink = document.querySelector(`a[href="${activeRoute}"]`);
-
         if (activeLink) return activeLink;
 
-        const routeGroups = {
-            '/profit': ['/create-profit', '/edit-profit'],
-            '/costs': ['/create-costs', '/edit-costs']
+        const routeMappings = {
+            '/transactions/create-transaction': '/transactions',
+            '/transactions/edit-transactions': '/transactions',
+
+            '/profit/create-profit': '/profit',
+            '/profit/edit-profit': '/profit',
+
+            '/categories': this.resolveCategoriesRoute()
         };
 
-        for (const [mainRoute, relatedRoutes] of Object.entries(routeGroups)) {
-            if (relatedRoutes.includes(activeRoute)) {
-                activeLink = document.querySelector(`a[href="${mainRoute}"]`);
+        for (const [route, targetRoute] of Object.entries(routeMappings)) {
+            if (activeRoute === route || activeRoute.startsWith(route)) {
+                activeLink = document.querySelector(`a[href="${targetRoute}"]`);
                 if (activeLink) return activeLink;
             }
         }
 
-        return null;
+        if (activeRoute === '/') {
+            activeLink = document.querySelector('a[href="/"]');
+        }
+
+        return activeLink;
     }
 
-    openCategoriesForRelatedPages(activeRoute) {
+    resolveCategoriesRoute() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const category = urlParams.get('category');
+
+        if (category === 'income') {
+            return '/profit';
+        } else if (category === 'expense') {
+            return '/costs';
+        }
+
+        return '/profit';
+    }
+
+    openCategoriesForRelatedPages(activeRoute, activeLink) {
         const dropdownCheckbox = document.getElementById('categories-toggle');
         if (!dropdownCheckbox) return;
 
         const categoryRelatedPages = [
             '/profit', '/costs',
-            '/create-profit', '/create-costs',
-            '/edit-profit', '/edit-costs'
+            '/profit/create-profit', '/profit/edit-profit',
+            '/categories'
         ];
 
-        if (categoryRelatedPages.includes(activeRoute)) {
+        const isCategoryPage = categoryRelatedPages.includes(activeRoute) ||
+            activeRoute.startsWith('/categories') ||
+            activeRoute.startsWith('/profit/') ||
+            activeRoute.startsWith('/costs/');
+
+        if (isCategoryPage) {
+            dropdownCheckbox.checked = true;
+        }
+
+        if (activeLink && activeLink.classList.contains('sub-item')) {
             dropdownCheckbox.checked = true;
         }
     }
@@ -215,11 +245,14 @@ export class Layout {
 
             const keepOpenPages = [
                 '/profit', '/costs',
-                '/create-profit', '/create-costs',
-                '/edit-profit', '/edit-costs'
+                '/profit/create-profit', '/profit/edit-profit',
+                '/categories'
             ];
 
-            const shouldKeepOpen = keepOpenPages.includes(window.location.pathname);
+            const shouldKeepOpen = keepOpenPages.includes(window.location.pathname) ||
+                window.location.pathname.startsWith('/categories') ||
+                window.location.pathname.startsWith('/profit/') ||
+                window.location.pathname.startsWith('/costs/');
 
             if (!dropdown.contains(e.target) && !shouldKeepOpen) {
                 checkbox.checked = false;

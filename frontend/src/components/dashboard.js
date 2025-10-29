@@ -39,29 +39,8 @@
                 this.getOperations('all').then();
                 this.updateBalance();
 
-                this.hideCalendar();
             }
 
-            hideCalendar() {
-                const calendarElements = [
-                    '.vanilla-calendar',
-                    '[data-vanilla-calendar]',
-                    '.vanilla-calendar-custom'
-                ];
-
-                calendarElements.forEach(selector => {
-                    const elements = document.querySelectorAll(selector);
-                    elements.forEach(element => {
-                        element.style.display = 'none';
-                        element.remove();
-                    });
-                });
-
-                const calendarContainer = document.getElementById('calendar-container');
-                if (calendarContainer) {
-                    calendarContainer.remove();
-                }
-            }
 
             initEventListeners() {
                 const todayBtn = document.getElementById('button-today');

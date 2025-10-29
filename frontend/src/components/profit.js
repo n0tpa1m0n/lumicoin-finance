@@ -11,7 +11,6 @@ export class Profit {
         this.pageTitleElement = document.getElementById('page-title');
         this.cardsElement = document.getElementById('cards');
 
-
         if (!this.pageTitleElement || !this.cardsElement) {
             return;
         }
@@ -30,7 +29,6 @@ export class Profit {
     }
 
     async showCategoriesIncome() {
-
         if (this.pageTitleElement) {
             this.pageTitleElement.innerText = this.pageTitle;
         }
@@ -69,14 +67,13 @@ export class Profit {
                 colElement.appendChild(card);
                 this.cardsElement.appendChild(colElement);
             });
-        } else {
-            console.log('No income categories found');
         }
 
         this.addCreateCard();
     }
 
     addCreateCard() {
+
         if (this.cardAddElement && this.cardsElement) {
             this.cardAddElement.innerHTML = '<div class="card d-flex justify-content-center align-items-center p-0">'
                 + '<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">'
@@ -146,10 +143,12 @@ export class Profit {
             LocalStorageUtil.removeCategory();
         }
         LocalStorageUtil.setCategory(element);
-        this.openNewRoute('/edit-profit');
+
+        this.openNewRoute(`/categories?type=edit&category=income&id=${element.id}`);
     }
 
     goCreateCategoryIncome() {
-        this.openNewRoute('/create-profit');
+
+        this.openNewRoute('/categories?type=create&category=income');
     }
 }
